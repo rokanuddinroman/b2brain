@@ -5,6 +5,8 @@ const searchIcon = document.getElementById("searchIcon")
 const closeIcon = document.getElementById("closeIcon")
 const accountsContainer = document.getElementById("accounts")
 const trackButton = document.getElementById("trackButton")
+const dropdownOne = document.getElementById("dropdown-menu-1")
+const dropdownTwo = document.getElementById("dropdown-menu-2")
 
 searchBody.style.display = "none"
 
@@ -39,7 +41,7 @@ const searchItem = () => {
         .then(res => res.json())
         .then(data => {
             displaySearchResult(data)
-            console.log(data)
+            // console.log(data)
         })
 }
 
@@ -56,7 +58,7 @@ const displaySearchResult = accounts => {
                         <p class="company-website">${account.website}</p>
                     </div>
                     <div>
-                        <button onclick={console.log('${JSON.stringify(account.company).split(" ").join("")},${String(account.slug)},${Date.now()}')}  class="primary-button">Track</button>
+                        <button onclick=console.log('${JSON.stringify(account.company).split(" ").join("")},${String(account.slug)},tracked-at,${Date.now()}') class="primary-button">Track</button>
                     </div>
                 </div>
             </div>
@@ -67,4 +69,12 @@ const displaySearchResult = accounts => {
 
 const handleTracking = (account) => {
     console.log(JSON.stringify(account.company))
+}
+
+
+const dropdownFirst = () => {
+    dropdownOne.classList.toggle("displayNone")
+}
+const dropdownSecond = () => {
+    dropdownTwo.classList.toggle("displayNone")
 }

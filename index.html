@@ -31,25 +31,25 @@
                         <span class="badge">4 unread</span>
                     </li>
                     <div>
-                        <li class="dropdown" onclick={dropdown}>
+                        <li class="dropdown" onclick={dropdownFirst()}>
                             <span><img style="margin-right:4px" class="nav-icon" src="./assets/icons/building.svg"
                                     alt="">Accounts
                             </span>
                             <i class='bx bx-chevron-down'></i>
                         </li>
-                        <ul class="dropdown-menu">
+                        <ul id="dropdown-menu-1" class="dropdown-menu">
                             <li><a href="">Manage all</a></li>
                             <li><a href="">Track new accounts</a></li>
                             <li><a href="">Bulk Import</a></li>
                         </ul>
                     </div>
                     <div>
-                        <li onclick={dropdown}>
+                        <li onclick={dropdownSecond()}>
                             <span><img style="margin-right:4px" class="nav-icon" src="./assets/icons/cog.svg"
                                     alt="">Preferences</span>
                             <i class='bx bx-chevron-down'></i>
                         </li>
-                        <ul class="dropdown-menu">
+                        <ul id="dropdown-menu-2" class="dropdown-menu">
                             <li><a href="">Product Focus</a></li>
                             <li><a href="">Intel Preferences</a></li>
                             <li><a href="">Lead Persona</a></li>
