@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2Brain</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar-container">
+        <div class="sidebar-wrapper">
+            <div class="sidebar">
+                <img class="logo" src="./assets/images/53478.png" alt="">
+                <ul>
+                    <li class="active">
+                        <a href=""><img class="nav-icon" src="./assets/icons/home.svg" alt="">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href=""><img class="nav-icon" src="./assets/icons/star.svg" alt="">Intels</a>
+                        <span class="badge">4 unread</span>
+                    </li>
+                    <li>
+                        <a href=""><img style="margin-right:4px" class="nav-icon" src="./assets/icons/user.svg"
+                                alt="">Leads</a>
+                        <span class="badge">4 unread</span>
+                    </li>
+                    <div>
+                        <li class="dropdown" onclick={dropdown}>
+                            <span><img style="margin-right:4px" class="nav-icon" src="./assets/icons/building.svg"
+                                    alt="">Accounts
+                            </span>
+                            <i class='bx bx-chevron-down'></i>
+                        </li>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Manage all</a></li>
+                            <li><a href="">Track new accounts</a></li>
+                            <li><a href="">Bulk Import</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <li onclick={dropdown}>
+                            <span><img style="margin-right:4px" class="nav-icon" src="./assets/icons/cog.svg"
+                                    alt="">Preferences</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </li>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Product Focus</a></li>
+                            <li><a href="">Intel Preferences</a></li>
+                            <li><a href="">Lead Persona</a></li>
+                        </ul>
+                    </div>
+                    <li><a href=""><img class="nav-icon" src="./assets/icons/link.svg" alt="">Integrations</a></li>
+                    <li><a href=""><img class="nav-icon" src="./assets/icons/users.svg" alt="">Team</a></li>
+                    <li><a href=""><img class="nav-icon" src="./assets/icons/comments-alt.svg" alt="">Help/Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="header-search">
+            <header>
+                <input onfocus={searchHandler()} onchange={searchItem()} placeholder="Search by account name or website"
+                    id="searchInput" class="search" type="search">
+                <div>
+                    <div id="searchIcon">
+                        <i class='bx bx-search search-icon'></i>
+                    </div> <button id="closeIcon" class="close-button displayNone">
+                        <i onclick={handleCloseButton()} class='bx bx-x search-icon'></i>
+                    </button>
+                </div>
+                <span class="notification">
+                    <img class="bell-notification" src="./assets/icons/bell.svg" alt="">
+                    <span class="notification-indicator"></span>
+                </span>
+                <img class="user-profile" src="./assets/icons/Logo.svg" alt="">
+            </header>
+        </div>
+        <main>
+            <div id="main-body">
+                <img style="width: 100%;" src="./assets/images/hero-image.png" alt="">
+                <img style="width: 100%;" src="./assets/images/Screenshot 2022-07-01 at 1.46.png" alt="">
+                <img style="width: 100%;" src="./assets/images/Screenshot 2022-07-01 at 1.46 (1).png" alt="">
+            </div>
+            <div id="search-body">
+                <div class="search-body">
+                    <div>
+                        <h2 style="margin-bottom: 1rem">Similar accounts</h1>
+                            <div id="accounts">
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="account">
+                                    <img class="company-logo" src="./assets/icons/Logo.svg" alt="">
+                                    <div class="account-detail">
+                                        <div>
+                                            <p class="company-name">Harrow Inc.</p>
+                                            <p class="company-website">www.harrow.com</p>
+                                        </div>
+                                        <div>
+                                            <button class="primary-button">Track</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div>
+                        <h2 style="margin-bottom: 1rem">Quick Actions</h1>
+                            <a style="margin-bottom: 1rem; font-family: Manrope-Bold;" href="">Track new account</a>
+                            <a style="margin-bottom: 1rem; font-family: Manrope-Bold;" href="">Bulk track accounts</a>
+                            <a style="margin-bottom: 1rem; font-family: Manrope-Bold;" href="">Manage accounts</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <Footer>
+
+        </Footer>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
