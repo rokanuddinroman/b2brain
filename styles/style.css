@@ -252,3 +252,13 @@ header {
     background-color: white;
     cursor: pointer;
 }
+
+.success-button {
+    border: 1px solid #1AAB2B;
+    border-radius: 2px;
+    color: #1AAB2B;
+    padding: 7px 12px;
+    font-family: Manrope-Bold;
+    background-color: white;
+    cursor: pointer;
+}

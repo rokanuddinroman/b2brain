@@ -4,6 +4,7 @@ const mainBody = document.getElementById("main-body")
 const searchIcon = document.getElementById("searchIcon")
 const closeIcon = document.getElementById("closeIcon")
 const accountsContainer = document.getElementById("accounts")
+const trackButton = document.getElementById("trackButton")
 
 searchBody.style.display = "none"
 
@@ -32,6 +33,7 @@ const searchHandler = () => {
 const searchItem = () => {
     const searchText = searchInput.value
     searchInput.value = '';
+    // accountsContainer.innerHTML = []
     const url = `https://tva.staging.b2brain.com/search/autocomplete_org_all/?q=${searchText}`
     fetch(url)
         .then(res => res.json())
@@ -43,26 +45,18 @@ const searchItem = () => {
 
 
 const displaySearchResult = accounts => {
-
     accounts.forEach(account => {
-        // if (account.logo = "") {
-        //     let logo = <div class="dynamic-company-logo">${account.company.slice(0, 1)}</div>
-        // }
-        // if (!account.logo == "") {
-        //     let logo = account.logo
-        // }
-        // console.log(account)
         let accountData = document.createElement('div');
         accountData.innerHTML = `
             <div class="account">
-                <div class="dynamic-company-logo">${account.company.slice(0, 1)}</div>
+                <div class="dynamic-company-logo">${account.logo = " " ? account.company.slice(0, 1) : account.logo}</div>
                 <div class="account-detail">
                     <div>
                         <p class="company-name">${account.company}</p>
                         <p class="company-website">${account.website}</p>
                     </div>
                     <div>
-                        <button onclick=console.log('${account.company}${account.slug}${Date.now()}') class="primary-button">Track</button>
+                        <button onclick={console.log('${JSON.stringify(account.company).split(" ").join("")},${String(account.slug)},${Date.now()}')}  class="primary-button">Track</button>
                     </div>
                 </div>
             </div>
@@ -72,5 +66,5 @@ const displaySearchResult = accounts => {
 }
 
 const handleTracking = (account) => {
-    console.log(account.company)
+    console.log(JSON.stringify(account.company))
 }
